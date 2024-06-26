@@ -1,21 +1,91 @@
-﻿ 
-
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
+<div class="container">
+    @* <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-    @if (Context.User.Identity.IsAuthenticated)
-    { 
-        <br />
-        <h3>Bienvenido @User.Identity.Name </h3>
-        <h3>@ViewData["AccessToken"]</h3>
-        <br />
+    </div> *@
 
-    <a class="btn btn-outline-danger" asp-controller="Login" asp-action="Logout">Logout</a>
-    }
+    <div class="bienvenida text-center text-light">
+
+        @if (Context.User.Identity.IsAuthenticated)
+        {
+            <br />
+            <h3>Bienvenido <span class="text-success">@User.Identity.Name</span> </h3>
+            <h3>@ViewData["AccessToken"]</h3>
+            <br />
+
+
+        }
+
+    </div>
+
+
+    <div class="background">
+        <div class="centering">
+            <div class="articles">
+                <article>
+                    <figure>
+                        <img src="https://media.gq.com/photos/5841c584b85c50f47cfd55d4/16:9/w_2560%2Cc_limit/crazy-party.jpg"
+                             alt="Preview">
+                    </figure>
+                    <div class="article-preview">
+                        <h2>My Blog 1</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Praesent in mauris eu tortor porttitor accumsan.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Praesent in mauris eu tortor porttitor accumsan.
+                            <a href="#" class="read-more" title="Read More">
+                                Read more
+                            </a>
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://assets.theschooloflife.com/wp-content/uploads/2022/02/21185852/dance.jpg"
+                             alt="Preview">
+                    </figure>
+                    <div class="article-preview">
+                        <h2>My Blog 2</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Praesent in mauris eu tortor porttitor accumsan.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Praesent in mauris eu tortor porttitor accumsan.
+                            <a href="#" class="read-more" title="Read More">
+                                Read more
+                            </a>
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://imagenes.20minutos.es/files/image_640_360/uploads/imagenes/2019/09/17/1065286.jpg"
+                             alt="Preview">
+                    </figure>
+                    <div class="article-preview">
+                        <h2>My Blog 3</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent in mauris eu tortor porttitor accumsan.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent in mauris eu tortor porttitor accumsan.
+
+                            <a href="#" class="read-more">
+                                Read more
+                            </a>
+                        </p>
+                    </div>
+                </article>
+                
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
 
 
