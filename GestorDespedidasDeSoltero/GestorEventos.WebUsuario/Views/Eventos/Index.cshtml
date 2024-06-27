@@ -52,7 +52,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td class="hidden-column">
                     @Html.DisplayFor(modelItem => item.IdEvento)
                 </td>
                 <td>
@@ -78,10 +78,10 @@
                     @Html.DisplayFor(modelItem => item.EstadoEvento)
                 </td>
                 <td>
-                    
-                    @Html.ActionLink("Details", "Details", new { id = item.IdEvento }) |
-                    @* <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdEvento">Borrar</a> *@
-                    @Html.ActionLink("Delete", "Delete", new {  id=item.IdEvento })
+
+                    @Html.ActionLink("Details", "Details", new { id = item.IdEvento }) 
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdEvento })
                 </td>
             </tr>
         }

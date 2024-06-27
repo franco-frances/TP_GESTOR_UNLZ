@@ -6,84 +6,40 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1 class="text-light">Detalles</h1>
 
-<div>
-    <h4>EventoViewModel</h4>
+<div class="form-control">
+    
     <hr />
-    <dl class="row form-control">
+    <dl class="row">
         <dt class = "col-sm-2 ">
-            @Html.DisplayNameFor(model => model.EstadoEvento)
+           Estado de Evento
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.EstadoEvento)
         </dd>
+       
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdEvento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdEvento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreEvento)
+            Nombre del Evento
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NombreEvento)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaEvento)
+            Fecha del evento
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaEvento)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CantidadPersonas)
+            Cantidad de Personas
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CantidadPersonas)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdTipoEvento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdTipoEvento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdPersonaAgasajada)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdPersonaAgasajada)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MyProperty)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MyProperty)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdUsuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdUsuario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Visible)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Visible)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Borrado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Borrado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdEstadoEvento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdEstadoEvento)
-        </dd>
+        
+                
+        
     </dl>
 
     <h3>Servicios Contratados</h3>
@@ -102,5 +58,5 @@
 </div>
 <div>
     
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-danger" asp-action="Index">Volver a la lista</a>
 </div>

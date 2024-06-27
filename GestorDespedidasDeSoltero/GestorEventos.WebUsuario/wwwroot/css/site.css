@@ -115,3 +115,58 @@ body {
 .articles article:hover img {
     transform: scale(1.5);
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; /* Espacio entre la tabla y otros elementos */
+}
+
+/* Estilos para las filas de la tabla */
+tr {
+    border-bottom: 1px solid #ccc; /* Borde inferior de cada fila */
+}
+
+/* Estilos para las celdas de la tabla */
+td {
+    padding: 10px; /* Espaciado interno de las celdas */
+    text-align: left; /* Alineación del texto a la izquierda */
+}
+
+/* Estilos para los checkboxes */
+input[type="checkbox"] {
+    margin-right: 10px; /* Espacio entre el checkbox y el texto */
+    vertical-align: middle; /* Alineación vertical central */
+}
+
+/* Estilo alternativo para filas */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Fondo gris claro para filas pares */
+}
+
+.action-link {
+    display: inline-block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+    .action-link:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+.action-link-delete {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+    .action-link-delete:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }

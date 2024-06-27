@@ -10,7 +10,7 @@
 <h4 class="text-light">Ingrese su informacion</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4 form-control"> 
+    <div class="col-md-4 form-control">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <h2>Datos del Evento</h2>
@@ -20,23 +20,23 @@
                 <span asp-validation-for="IdEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NombreEvento" class="control-label"></label>
+                <label asp-for="NombreEvento" class="form-label fw-bold fst-italic">Nombre del Evento</label>
                 <input asp-for="NombreEvento" class="form-control" />
                 <span asp-validation-for="NombreEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaEvento" class="control-label"></label>
+                <label asp-for="FechaEvento" class="form-label fw-bold fst-italic"> Fecha de Evento</label>
                 <input asp-for="FechaEvento" class="form-control" />
                 <span asp-validation-for="FechaEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CantidadPersonas" class="control-label"></label>
+                <label asp-for="CantidadPersonas" class="form-label fw-bold fst-italic">Cantidad de personas</label>
                 <input asp-for="CantidadPersonas" class="form-control" />
                 <span asp-validation-for="CantidadPersonas" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdTipoEvento" class="control-label"></label>
-                <select asp-for="IdTipoEvento">
+                <label asp-for="IdTipoEvento" class="form-label fw-bold fst-italic">Tipo de Evento</label>
+                <select asp-for="IdTipoEvento" class="form-select ">
                     <option value="1">Despedida de Solteros</option>
                     <option value="2">Despedida de Solteras</option>
 
@@ -68,27 +68,27 @@
                 <span asp-validation-for="IdPersona" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
+                <label asp-for="Nombre" class="form-label fw-bold fst-italic">Nombre</label>
                 <input asp-for="Nombre" class="form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Apellido" class="control-label"></label>
+                <label asp-for="Apellido" class="form-label fw-bold fst-italic">Apellido</label>
                 <input asp-for="Apellido" class="form-control" />
                 <span asp-validation-for="Apellido" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Direccion" class="control-label"></label>
+                <label asp-for="Direccion" class="form-label fw-bold fst-italic">Direccion</label>
                 <input asp-for="Direccion" class="form-control" />
                 <span asp-validation-for="Direccion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Telefono" class="control-label"></label>
+                <label asp-for="Telefono" class="form-label fw-bold fst-italic">Telefono</label>
                 <input asp-for="Telefono" class="form-control" />
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+                <label asp-for="Email" class="form-label fw-bold fst-italic">E-mail</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
@@ -97,38 +97,9 @@
                     <input class="form-check-input" type="hidden" asp-for="Borrado" value="false" /> 
                 </label>
             </div>
-            <style>
-                /* Estilos para la tabla */
-                table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin-bottom: 20px; /* Espacio entre la tabla y otros elementos */
-                }
+            
 
-                /* Estilos para las filas de la tabla */
-                tr {
-                    border-bottom: 1px solid #ccc; /* Borde inferior de cada fila */
-                }
-
-                /* Estilos para las celdas de la tabla */
-                td {
-                    padding: 10px; /* Espaciado interno de las celdas */
-                    text-align: left; /* Alineación del texto a la izquierda */
-                }
-
-                /* Estilos para los checkboxes */
-                input[type="checkbox"] {
-                    margin-right: 10px; /* Espacio entre el checkbox y el texto */
-                    vertical-align: middle; /* Alineación vertical central */
-                }
-
-                /* Estilo alternativo para filas */
-                tr:nth-child(even) {
-                    background-color: #f2f2f2; /* Fondo gris claro para filas pares */
-                }
-            </style>
-
-            <table>
+            <table class="table-bordered">
                 <tbody>
                     <h3>Servicios</h3>
                     @foreach (var servicio in Model.listaDeServicios)
@@ -139,10 +110,10 @@
                                 
                                 <input type="checkbox" name="Servicio" value="@servicio.IdServicio" />
                             </td>
-                            <td>
+                            <td >
                                 @Html.DisplayFor(modelItem => servicio.Descripcion)
                             </td>
-                            <td>
+                            <td >
                                 @Html.DisplayFor(modelItem => servicio.PrecioServicio)
                             </td>
                         </tr>
@@ -189,7 +160,7 @@
 </div>
 
 <div>
-    <a class="btn btn-warning" asp-action="Index">Back to List</a>
+    <a class="btn btn-warning" asp-action="Index">Volver a la lista</a>
 </div>
 
 @section Scripts {
