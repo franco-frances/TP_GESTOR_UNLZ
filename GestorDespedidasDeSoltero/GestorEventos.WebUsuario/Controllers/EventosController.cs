@@ -74,7 +74,9 @@ namespace GestorEventos.WebUsuario.Controllers
         // GET: EventosController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            eventoService.BorrarLogicamenteEvento(id);
+
+            return RedirectToAction(nameof(Index));
         } 
 
             // POST: EventosController/Create

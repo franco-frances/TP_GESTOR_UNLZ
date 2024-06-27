@@ -19,6 +19,7 @@ namespace GestorEventos.Servicios.Servicios
         IEnumerable<EventoViewModel> GetMisEventos(int idUsuario);
         Evento GetEventoPorId(int IdEvento);
         int PostNuevoEvento(Evento evento);
+        public bool BorrarLogicamenteEvento(int idEvento);
         bool PutNuevoEvento(int idEvento, Evento evento);
         public Task<bool> AprobarRechazarEvento(int idEvento, int idEstadoEventos);
     }
@@ -54,10 +55,21 @@ namespace GestorEventos.Servicios.Servicios
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                List<EventoViewModel> eventos = db.Query<EventoViewModel>("Select Eventos.*, EstadoEventos.descripcion EstadoEvento from Eventos left join EstadoEventos on EstadoEventos.id= eventos.IdEstadoEventos WHERE Eventos.IdUsuario =" + idUsuario.ToString()).ToList();
+                List<EventoViewModel> eventos = db.Query<EventoViewModel>("Select Eventos.*, EstadoEventos.descripcion EstadoEvento from Eventos left join EstadoEventos on EstadoEventos.id= eventos.IdEstadoEventos WHERE Borrado = 0 AND Eventos.IdUsuario =" + idUsuario.ToString()).ToList();
 
                 return eventos;
 
+            }
+        }
+
+        public bool BorrarLogicamenteEvento(int idEvento)
+        {
+            using (IDbConnection db = new SqlConnection(_connectionString))
+            {
+                string query = "UPDATE Eventos SET Borrado = 1 where IdEvento = " + idEvento.ToString();
+                db.Execute(query);
+
+                return true;
             }
         }
 
