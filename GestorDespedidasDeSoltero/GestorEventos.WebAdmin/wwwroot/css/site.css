@@ -18,5 +18,7 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  
+    background-color:lightblue !important;
+    margin-bottom: 60px;
 }

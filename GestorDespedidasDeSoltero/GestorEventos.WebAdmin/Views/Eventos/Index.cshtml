@@ -5,13 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Eventos</h1>
 
 <p>
     <a asp-action="Create">Crear Nuevo</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.IdEvento)
@@ -81,15 +81,15 @@
                 @Html.DisplayFor(modelItem => item.EstadoEvento)
             </td>
             <td>
-                    @Html.ActionLink("Details", "Details", new { idEvento = item.IdEvento }) |
-              
+                    @Html.ActionLink("Details", "Details", new { idEvento = item.IdEvento }, new { @class = "btn btn-info  mb-1" })
+
                     <form asp-action="AprobarEvento" method="post">
                         <input type="hidden" name="idEvento" value="@item.IdEvento" />
-                        <input type="submit" value="Aprobar" />
+                        <input type="submit" value="Aprobar" class="btn btn-success mb-1" />
                     </form>
                     <form asp-action="RechazarEvento" method="post" style="display:inline;">
                         <input type="hidden" name="idEvento" value="@item.IdEvento" />
-                        <input type="submit" value="Rechazar" class="btn btn-danger" />
+                        <input type="submit" value="Rechazar" class="btn btn-danger  mb-1" />
                     </form>
                 
                 

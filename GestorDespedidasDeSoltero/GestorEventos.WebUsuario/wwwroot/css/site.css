@@ -144,29 +144,3 @@ tr:nth-child(even) {
     background-color: #f2f2f2; /* Fondo gris claro para filas pares */
 }
 
-.action-link {
-    display: inline-block;
-    padding: 6px 12px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #007bff;
-    border: 1px solid #007bff;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-right: 5px;
-}
-
-    .action-link:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
-    }
-
-.action-link-delete {
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-
-    .action-link-delete:hover {
-        background-color: #c82333;
-        border-color: #bd2130;
-    }

@@ -15,4 +15,10 @@
     <ProjectReference Include="..\GestorEventos.Servicios\GestorEventos.Servicios.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\img\logonuevo-solterout.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
