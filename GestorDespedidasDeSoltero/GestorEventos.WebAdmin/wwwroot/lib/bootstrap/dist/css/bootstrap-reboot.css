@@ -19,11 +19,11 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: system-ui;
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
+  color: white;
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;

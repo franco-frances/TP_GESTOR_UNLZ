@@ -4,15 +4,15 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Details</h1>
-
+<br />
+<h1 style="color:white">Detalles del Servicio</h1>
+<br />
 <div>
-    <h4>Servicio</h4>
+
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdServicio)
+    <dl class="row" style="color:white">
+        <dt class="col-sm-2">
+            Id del Servicio
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IdServicio)
@@ -23,15 +23,19 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Descripcion)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PrecioServicio)
+        <dt class="col-sm-2">
+            Precio del Servicio
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PrecioServicio)
         </dd>
     </dl>
 </div>
+<br />
 <div>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.IdServicio }) |
-    <a asp-action="Index">Back to List</a>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdServicio }, new { @class = "btn btn-sm btn-warning" } ) |
+</div>
+<br />
+<div>
+    <a asp-action="Index" class="btn btn-primary text-white">Volver a la Lista</a>
 </div>
