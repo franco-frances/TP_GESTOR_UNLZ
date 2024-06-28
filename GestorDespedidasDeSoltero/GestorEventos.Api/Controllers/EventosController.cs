@@ -9,17 +9,24 @@ namespace GestorEventos.Api.Controllers
 	[ApiController]
 	public class EventosController : ControllerBase
 	{
+        private IEventoService eventoService;
+        
 
-		/// <summary>
-		/// Traerá todos los eventos
-		/// </summary>
-		/// <returns></returns>
-		[HttpGet]
+        public EventosController(IEventoService _eventoService)
+        {
+            this.eventoService = _eventoService;
+            
+        }
+        /// <summary>
+        /// Traerá todos los eventos
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
 		public IActionResult GetEventos()
 		{
-			EventoService eventosService = new EventoService();
+			
 
-			return Ok(eventosService.GetAllEventosViewModel());
+			return Ok(eventoService.GetAllEventosViewModel());
 		}
 
 		/// <summary>
@@ -30,9 +37,9 @@ namespace GestorEventos.Api.Controllers
 		[HttpGet("{idEvento:int}")]
 		public IActionResult GetEventosPorId(int idEvento)
 		{
-			EventoService eventosService = new EventoService();
+			
 
-			var evento = eventosService.GetEventoPorId(idEvento);
+			var evento = eventoService.GetEventoPorId(idEvento);
 
 			if (evento == null)
 				return NotFound();
@@ -43,7 +50,7 @@ namespace GestorEventos.Api.Controllers
 		[HttpPost("Nuevo")]
 		public IActionResult PostNuevoEvento([FromBody] Evento evento)
 		{
-			EventoService eventoService = new EventoService();
+			
 			 
 
 
@@ -101,7 +108,7 @@ namespace GestorEventos.Api.Controllers
 
 		public IActionResult PutNuevoEvento(int idEvento, [FromBody] Evento evento)
 		{
-			EventoService eventoService = new EventoService();
+			
 			bool resultado = eventoService.PutNuevoEvento(idEvento, evento);
 
 			if (resultado)
@@ -123,7 +130,7 @@ namespace GestorEventos.Api.Controllers
 		public IActionResult DeleteEvento(int idEvento)
 		{
 
-			EventoService eventoService = new EventoService();
+			
 			bool resultado = eventoService.DeleteEvento(idEvento);
 
 			if (resultado)

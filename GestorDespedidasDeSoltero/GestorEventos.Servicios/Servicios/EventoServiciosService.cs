@@ -56,6 +56,8 @@ namespace GestorEventos.Servicios.Servicios
 
         public IEnumerable<EventosServicios> GetServiciosPorEvento(int IdEvento)
         {
+            
+            
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
                 List<EventosServicios> eventos = db.Query<EventosServicios>("select * from eventosServicios WHERE IdEvento =" + IdEvento.ToString()).ToList();
