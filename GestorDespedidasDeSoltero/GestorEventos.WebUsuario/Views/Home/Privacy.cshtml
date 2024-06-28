@@ -3,7 +3,7 @@
 }
 <!--<h1>@ViewData["Title"]</h1>-->
 
-<p>
+
     <head class="text-light">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,80 +46,271 @@
                     margin-right: 10px;
                 }
 
+
+        :root {
+            --white: #FFF;
+            --background: #060D23;
+            --background-hover: #383D4F;
+            --primary-blue: #00E0FE;
+            --blue-gray: #f4fcff;
+        }
+
+        html {
+            font-size: 18px;
+            font-family: "Mulish", sans-serif;
+        }
+
+        body {
+            height: 100%;
+            background-color: var(--blue-gray);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .faq-container {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 4rem;
+            max-width: 37.5rem;
+            padding: 2rem;
+            border-radius: 1em;
+            background-color: var(--background);
+           
+        }
+
+        details {
+            font-size: 1rem;
+            margin: 0 auto;
+            width: 100%;
+            border-radius: 0.5rem;
+            position: relative;
+            max-width: 37.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+            details:hover {
+                background-color: var(--background-hover);
+            }
+
+                details:hover svg {
+                    stroke: var(--primary-blue);
+                }
+
+            details[open] {
+                background-color: var(--background-hover);
+            }
+
+                details[open] .faq-title {
+                    color: var(--primary-blue);
+                }
+
+        summary {
+            user-select: none;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            list-style: none;
+            padding: 1rem;
+            align-items: center;
+            
+        }
+
+            summary svg {
+                stroke: var(--white);
+            }
+
+        details[open] summary svg {
+            stroke: var(--primary-blue);
+            transform: rotate(90deg);
+        }
+
+        summary:hover .faq-title {
+            color: var(--primary-blue);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary:focus {
+            outline: none;
+        }
+
+        .faq-title {
+            color: var(--white);
+            width: 90%;
+            transition: all 250ms ease-in-out;
+        }
+
+        .faq-content {
+            color: var(--white);
+            padding: 0.2rem 1rem 1rem 1rem;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .expand-icon {
+            pointer-events: none;
+            position: absolute;
+            right: 1rem;
+            transition: all 150ms ease-out;
+        }
+
+
         </style>
     </head>
     <body>
-        <div class="container">
-            <header>
-                <h1>¡Bienvenidos a Welcome to Hell!</h1>
-                <br />
-                <h2>Veni a disfrutar del descontrol controlado</h2>
-                <br />
-            </header>
+        <div  class="faq-container">
+            <details>
+                <summary>
+                    <span class="faq-title">
+                        ¿Quiénes Somos?
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
+                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                <p style="color:wheat;">
+                    <strong>Welcome to Hell</strong> es una empresa dedicada a la organización de despedidas de solteros, ofreciendo
+                    experiencias únicas y personalizadas para hacer de este evento una ocasión inolvidable.<p/>
+            </div>
+        </details>
+            <details>
+                <summary>
+                    <span class="faq-title">
+                        Nuestros Creadores
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
+                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                    </svg>
+                </summary>
+                <div class="faq-content">
 
-            <section class="section">
-                <h3>¿Quiénes Somos?</h3>
-                <p><strong>Welcome to Hell</strong> es una empresa dedicada a la organización de despedidas de solteros, ofreciendo experiencias únicas y personalizadas para hacer de este evento una ocasión inolvidable.</p>
-            </section>
+                    <p><strong>Eduardo Alvarez</strong> - Co-fundador y Director Ejecutivo</p>
+                    <p><strong>Agustin Aguirre</strong> - Co-fundador y Director de Operaciones</p>
+                    <p><strong>Franco Amaolo</strong> - Co-fundador y Productor</p>
+                    <p><strong>Fabrizio Steinbach</strong> - Co-fundador y Director de Marketing</p>
+                    <p><strong>ChatGPT</strong> - Co-fundador y Director Creativo</p>
 
-            <section class="section">
-                <h3>Nuestros Creadores</h3>
-                <ul>
-                    <li><strong>Eduardo Alvarez</strong> - Co-fundador y Director Ejecutivo</li>
-                    <li><strong>Agustin Aguirre</strong> - Co-fundador y Director de Operaciones</li>
-                    <li><strong>Franco Amaolo</strong> - Co-fundador y Productor</li>
-                    <li><strong>Fabrizio Steinbach</strong> - Co-fundador y Director de Marketing</li>
-                    <li><strong>ChatGPT</strong> - Co-fundador y Director Creativo</li>
-                </ul>
-            </section>
+                </div>
+            </details>
+            <details>
+                <summary>
+                    <span class="faq-title">Nuestros Servicios</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
+                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    <p><strong>Despedidas Personalizadas:</strong> Planificación de eventos a medida para cada cliente.</p>
+                    <br>
+                    <p>
+                        <strong>Actividades Temáticas:</strong> Ofrecemos una variedad de temas y actividades que se adaptan a los
+                        gustos de
+                        cada grupo.
+                    </p>
+                    <br>
+                    <p>
+                        <strong>Paquetes Todo Incluido:</strong> Desde la logística hasta el entretenimiento, nos encargamos de todo
+                        para que
+                        disfrutes sin preocupaciones.
+                    </p>
+                    <br>
+                    <p>
+                        <strong>Ubicaciones Exclusivas:</strong> Acceso a los mejores lugares y servicios VIP para garantizar una
+                        experiencia de
+                        lujo./p>
+                </div>
+            </details>
+            <details>
+                <summary>
+                    <span class="faq-title">Nuestra Filosofía</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
+                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    <p><strong>Innovación:</strong> Nos esforzamos por ofrecer ideas frescas y creativas en cada evento.</p>
+                    <br>
+                    <p>
+                        <strong>Calidad:</strong> Priorizamos la excelencia en cada detalle, asegurando una experiencia perfecta para
+                        nuestros
+                        clientes.
+                    </p>
+                    <br>
+                    <p>
+                        <strong>Satisfacción del Cliente:</strong> Nuestro principal objetivo es crear recuerdos inolvidables y
+                        cumplir con
+                        todas las expectativas de nuestros clientes.
+                    </p>
 
-            <section class="section">
-                <h3>Nuestros Servicios</h3>
-                <ul>
-                    <li><strong>Despedidas Personalizadas:</strong> Planificación de eventos a medida para cada cliente.</li>
-                    <li><strong>Actividades Temáticas:</strong> Ofrecemos una variedad de temas y actividades que se adaptan a los gustos de cada grupo.</li>
-                    <li><strong>Paquetes Todo Incluido:</strong> Desde la logística hasta el entretenimiento, nos encargamos de todo para que disfrutes sin preocupaciones.</li>
-                    <li><strong>Ubicaciones Exclusivas:</strong> Acceso a los mejores lugares y servicios VIP para garantizar una experiencia de lujo.</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h3>Nuestra Filosofía</h3>
-                <ul>
-                    <li><strong>Innovación:</strong> Nos esforzamos por ofrecer ideas frescas y creativas en cada evento.</li>
-                    <li><strong>Calidad:</strong> Priorizamos la excelencia en cada detalle, asegurando una experiencia perfecta para nuestros clientes.</li>
-                    <li><strong>Satisfacción del Cliente:</strong> Nuestro principal objetivo es crear recuerdos inolvidables y cumplir con todas las expectativas de nuestros clientes.</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h3>Testimonios de Clientes</h3>
-                <blockquote class="testimonial">
-                    <p>"La despedida de soltero organizada por Welcome To Hell fue espectacular. Todo estuvo perfecto y mis amigos y yo nos divertimos muchísimo con las peleas de mono con navaja"</p>
-                    <footer class="text-light">Juan Patito</footer>
-                </blockquote>
-                <blockquote class="testimonial">
-                    <p>"El equipo de Fiesta de Solteros se encargó de todo. No tuve que preocuparme por nada y fue una noche inolvidable. El toro mecanico fue lo mejor"</p>
-                    <footer class="text-light">Ana Gómez</footer-->
-                </blockquote>
-            </section>
-
-            <section class="section">
-                <h3>Contacta con Nosotros</h3>
-                <p><strong>Welcome To Hell</strong></p>
-                <p>Email: <a href="mailto:PartyOn@Welcometohell.com">partyon@welcometohell.com</a></p>
-                <p>Teléfono: +123-456-7890</p>
-                <p>Dirección: Calle falsa, 123</p>
-            </section>
-
-            <section class="section">
-                <h3>Síguenos en Redes Sociales</h3>
-                <ul class="social-links">
-                    <li><a href="https://facebook.com/fiestadesolteros" target="_blank">Facebook</a></li>
-                    <li><a href="https://instagram.com/fiestadesolteros" target="_blank">Instagram</a></li>
-                    <li><a href="https://twitter.com/fdsolteros" target="_blank">Twitter</a></li>
-                </ul>
-            </section>
+                </div>
+            </details>
+            <details>
+                <summary>
+                    <span class="faq-title">Testimonios de Clientes</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
+                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    <blockquote class="testimonial">
+                        <p>
+                            "La despedida de soltero organizada por Welcome To Hell fue espectacular. Todo estuvo perfecto y mis amigos
+                            y yo
+                            nos divertimos muchísimo con las peleas de mono con navaja"
+                        </p>
+                        <br>
+                        <footer class="text-light">Juan Patito</footer>
+                        <br>
+                    </blockquote>
+                    <blockquote class="testimonial">
+                        <p>
+                            "El equipo de Fiesta de Solteros se encargó de todo. No tuve que preocuparme por nada y fue una noche
+                            inolvidable.
+                            El toro mecanico fue lo mejor"
+                        </p>
+                        <br>
+                        <footer class="text-light">Ana Gómez</footer-->
+                    </blockquote>
+                </div>
+            </details>
+            <details>
+                <summary>
+                    <span class="faq-title">
+                        Contacta con Nosotros
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
+                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    <p><strong>Welcome To Hell</strong></p>
+                    <p>Email: <a href="mailto:PartyOn@Welcometohell.com">partyon@welcometohell.com</a></p>
+                    <p>Teléfono: +123-456-7890</p>
+                    <p>Dirección: Calle falsa, 123</p>
+                </div>
+            </details>
 
             <footer>
                 <p>¡Gracias por Confiar en Nosotros!</p>
@@ -127,5 +318,6 @@
                 <br /><br />
             </footer>
         </div>
+        <br /> <br />
+    
     </body>
-</p>
